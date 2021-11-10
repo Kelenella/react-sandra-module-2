@@ -1,48 +1,58 @@
 import "./App.css";
 import { Component } from "react";
-import Counter from "./components/Counter/Counter";
+import { Form } from "./components/Forms/Form";
 
-// function App() {
-//   return <div className="App"></div>;
-// }
+// import Counter from "./components/Counter/Counter";
+
 class App extends Component {
   state = {
-    counter: 0,
-  };
-  handleDecrement = () => {
-    // this.setState((prevState) => {
-    //   return {
-    //     counter: prevState.counter - 1,
-    //   };
-    // });
-    // shorter
-    this.setState((prevState) => ({
-      counter: prevState.counter - 1,
-    }));
+    allProducts: [],
   };
 
-  handleIncrement = () => {
-    this.setState((prevState) => ({
-      counter: prevState.counter + 1,
-    }));
+  addNewProduct = (product) => {
+    this.setState((prevState) => {
+      return { allProducts: [...prevState.allProducts, product] };
+    });
   };
+
   render() {
-    console.log(this.props);
-    const { counter } = this.state;
-    const { handleDecrement, handleIncrement } = this;
     return (
       <>
         <div className="App">
           <h1>FE 35 Module 2</h1>
+          <Form addNewProduct={this.addNewProduct} />
         </div>
-        <Counter
-          handleDecrement={handleDecrement}
-          handleIncrement={handleIncrement}
-          value={counter}
-        />
       </>
     );
   }
 }
 
 export default App;
+
+// counter: 0,
+// const { counter } = this.state;
+// const { handleDecrement, handleIncrement } = this;
+// handleDecrement = () => {
+// this.setState((prevState) => {
+//   return {
+//     counter: prevState.counter - 1,
+//   };
+// });
+// shorter
+//   this.setState((prevState) => ({
+//     counter: prevState.counter - 1,
+//   }));
+// };
+
+// handleIncrement = () => {
+//   this.setState((prevState) => ({
+//     counter: prevState.counter + 1,
+//   }));
+// };
+
+// {
+//   /* <Counter
+//           handleDecrement={handleDecrement}
+//           handleIncrement={handleIncrement}
+//           value={counter} */
+// }
