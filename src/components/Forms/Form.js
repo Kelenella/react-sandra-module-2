@@ -8,12 +8,13 @@ export class Form extends Component {
     product: null,
     agreed: false,
     size: "",
+    id: null,
   };
-
+  prodId = uuid();
   prodIdTitle = uuid();
   prodIdDesc = uuid();
   prodIdAgreed = uuid();
-  porIdSize = uuid();
+  prodIdSize = uuid();
 
   //   handleChange = (e) => {
   //     // console.log(e.target.value);
@@ -32,8 +33,9 @@ export class Form extends Component {
   };
 
   handleSubmit = (e) => {
-    const { title, desc, size } = this.state;
+    const { title, desc, size, id } = this.state;
     const product = {
+      prodId: id,
       title,
       description: desc,
       size,
@@ -65,7 +67,7 @@ export class Form extends Component {
       prodIdTitle,
       prodIdDesc,
       prodIdAgreed,
-      porIdSize,
+      prodIdSize,
     } = this;
     const { title, desc, agreed, size } = this.state;
     return (
@@ -87,9 +89,9 @@ export class Form extends Component {
           onChange={handleChangeAllInputs}
         />
         <br />
-        <label htmlFor={porIdSize}>Choose your size</label>
+        <label htmlFor={prodIdSize}>Choose your size</label>
         <select
-          id={porIdSize}
+          id={prodIdSize}
           name="size"
           value={size}
           onChange={handleChangeAllInputs}
