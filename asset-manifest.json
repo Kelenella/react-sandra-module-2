@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-sandra-module-2/static/css/main.3ec96c7c.chunk.css",
-    "main.js": "/react-sandra-module-2/static/js/main.20d24351.chunk.js",
-    "main.js.map": "/react-sandra-module-2/static/js/main.20d24351.chunk.js.map",
+    "main.js": "/react-sandra-module-2/static/js/main.5b74983c.chunk.js",
+    "main.js.map": "/react-sandra-module-2/static/js/main.5b74983c.chunk.js.map",
     "runtime-main.js": "/react-sandra-module-2/static/js/runtime-main.718cc6bc.js",
     "runtime-main.js.map": "/react-sandra-module-2/static/js/runtime-main.718cc6bc.js.map",
     "static/css/2.bc922b9c.chunk.css": "/react-sandra-module-2/static/css/2.bc922b9c.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.bc922b9c.chunk.css",
     "static/js/2.8418ca46.chunk.js",
     "static/css/main.3ec96c7c.chunk.css",
-    "static/js/main.20d24351.chunk.js"
+    "static/js/main.5b74983c.chunk.js"
   ]
 }
