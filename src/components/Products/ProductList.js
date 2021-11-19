@@ -4,13 +4,12 @@ export function ProductList({ products, onDeleteProduct }) {
       <h2>Product List</h2>
       <ul>
         {products.map((product) => {
-          console.log(product);
           return (
             <li key={product.id}>
               <h3>{product.title}</h3>
               <p>{product.description}</p>
               <p>{product.size}</p>
-              <button type="button" onClick={onDeleteProduct} id={product.id}>
+              <button type="button" onClick={() => onDeleteProduct(product.id)}>
                 Delete
               </button>
             </li>

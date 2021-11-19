@@ -8,9 +8,8 @@ export class Form extends Component {
     product: null,
     agreed: false,
     size: "",
-    id: null,
   };
-  prodId = uuid();
+
   prodIdTitle = uuid();
   prodIdDesc = uuid();
   prodIdAgreed = uuid();
@@ -33,9 +32,9 @@ export class Form extends Component {
   };
 
   handleSubmit = (e) => {
-    const { title, desc, size, id } = this.state;
+    const { title, desc, size } = this.state;
     const product = {
-      prodId: id,
+      id: uuid(),
       title,
       description: desc,
       size,

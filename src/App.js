@@ -3,6 +3,7 @@ import "./App.css";
 import { Component } from "react";
 import { Form } from "./components/Forms/Form";
 import { ProductList } from "./components/Products/ProductList";
+import { DeleteButton } from "./components/Widgets/RemoveItem";
 
 // import Counter from "./components/Counter/Counter";
 
@@ -12,13 +13,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log("Mount");
     const localProducts = localStorage.getItem("products");
     const parsedProducts = JSON.parse(localProducts);
     this.setState({ allProducts: parsedProducts });
+    console.log(this.state.allProducts);
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log("update");
     //если изменилось значение поля стейта prevState.prop,
     // то будем переписывать локалсторедж
     if (prevState.allProducts !== this.state.allProducts) {
@@ -30,14 +30,15 @@ class App extends Component {
   }
 
   addNewProduct = (product) => {
-    this.setState((prevState) => {
-      return { allProducts: [...prevState.allProducts, product] };
+    this.setState((prev) => {
+      return { allProducts: [...prev.allProducts, product] };
     });
   };
 
   deleteProduct = (productId) => {
-    this.setState((prev) => ({
-      allProducts: prev.allProducts.filter(
+    console.log(productId);
+    this.setState((prevState) => ({
+      allProducts: prevState.allProducts.filter(
         (product) => product.id !== productId
       ),
     }));
@@ -50,10 +51,11 @@ class App extends Component {
         <div className="App">
           <h1>FE 35 Module 2, 3</h1>
           <Form addNewProduct={this.addNewProduct} />
-          <ProductList
+          {/* <ProductList
             products={this.state.allProducts}
             onDeleteProduct={this.deleteProduct}
-          />
+          /> */}
+          <DeleteButton />
         </div>
       </>
     );
